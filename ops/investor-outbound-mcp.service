@@ -1,0 +1,17 @@
+[Unit]
+Description=Investor Outbound MCP Server
+After=network.target
+
+[Service]
+Type=simple
+User=youruser
+WorkingDirectory=/opt/investor-outbound-mcp
+Environment=IO_EMAIL=<set-in-env>
+Environment=IO_PASSWORD=<set-in-env>
+ExecStart=/usr/bin/python3 -m src.server --sse --port 8770
+Restart=on-failure
+RestartSec=5
+MemoryMax=1G
+
+[Install]
+WantedBy=multi-user.target

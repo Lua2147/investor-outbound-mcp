@@ -1,0 +1,11 @@
+data/
+.env
+*.pyc
+__pycache__/
+.pytest_cache/
+*.egg-info/
+dist/
+build/
+.coverage
+docs/*.json
+.playwright-mcp/
